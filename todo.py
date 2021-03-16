@@ -2,6 +2,13 @@
 
 import sys
 
+def task_input():
+    """Function to input new task attributes"""
+    name = input("Task name: ")
+    due_date = input("Due date: ")
+    priority = input("Priority: ")
+    return name, due_date, priority
+
 class Task:
     """Representation of task attributes"""
 
@@ -23,11 +30,10 @@ class Tasks:
 
     def add(self):
         """Prompts to add task"""
-              
-        new_task = Task(name = input("Task name: "), due_date = input("Due date: "), priority = input("Priority: "))
-	    self.tasks_list.append(new_task)
-		print(“Added a new task”, len(self.tasks_list), new_task.name)
-        
+        new_task = Task(name, due_date, priority)
+        self._tasks_list.append(new_task)
+        Print("Added a new task", len(self.tasklist), new_task.name)
+
     def list_task(self):
         """Displays a list of the uncompleted tasks sorted by the due date"""
         self.unique_id = unique_id
@@ -63,8 +69,12 @@ class Tasks:
         self.created = created
         self.completed = completed
 
-def do_action():
-	if “add” == sys.argv[1]:
-        add()  
-        
-do_action(tasks, sys.argv[1:])     
+# Driver code
+if __name__ == "__main__":
+
+    # Create variables to hold fraction values and convert to mixed fractions, decimals
+    name, due_date, priority = task_input()
+    new_task = Task(name, due_date, priority)
+    
+
+    add()    
